@@ -1,0 +1,81 @@
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+#root{
+    width:100%;
+    height:100%;
+    align-content:center;
+    text-align:center;
+}
+.date{
+    font-size:1.3rem;
+}
+h1{
+    font-size:2.5rem;
+    font-weight:600;
+    margin:50px;
+    margin-bottom:10px;
+}
+h3{
+    font-weight:300;
+    font-size:1.5rem;
+}
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    padding-top:20px;
+    margin-top:30px;
+}
+input{
+    width:250px;
+    height:30px;
+    font-size:1rem;
+    margin:5px;
+}
+button{
+    width:250px;
+    height:30px;
+    font-size:1rem;
+    margin:10px;
+}
+.visitorForm {
+    display: flex;
+    flex-direction: column;
+    width:300px;
+ 
+}
+.visitorList {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    text-align: left;
+}
+h2{
+    margin:0;
+    margin-bottom:15px;
+}
+.visitor {
+    display: flex;
+    flex-direction:column;
+    width:320px;
+    font-weight:300;
+}
+#name{
+    margin:5px;
+    font-size:1.2rem;
+    font-weight:500;
+}
+#removeBtn, #updateBtn {
+    width: 60px;
+    font-size: 0.8rem;
+    margin-left:5px;
+}
+.update>input{
+    width:200px;
+    margin:5px;
+    display:inline;
+}
