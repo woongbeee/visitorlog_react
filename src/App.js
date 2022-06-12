@@ -2,8 +2,8 @@ import React, { useCallback,useRef, useReducer } from 'react';
 import VisitorForm from './VisitorForm';
 import VisitorList from './VisitorList';
 
-const today = new Date().toDateString();
-const logTime = new Date().toTimeString().substring(0, 9);
+const today = new Date().toDateString();     
+const logTime = new Date().toTimeString().substring(0, 9);// This will be used for what time visitors visit at.
 
 const initialState = {
     inputs: {
@@ -12,10 +12,10 @@ const initialState = {
         lastname: '',
         phonenumber: '',
         date: logTime,
-        isSpread: false,
-        isUpdate:false,
+        isSpread: false,      //When it is true, visitor's info spreads.
+        isUpdate:false,       //When it is true, visitor's info area turns out to update form.
     },
-    visitors: [
+    visitors: [                                             //initial infos to show how it works.
         {
             id: 1,
             firstname: 'Woongbee',
@@ -38,7 +38,7 @@ const initialState = {
     ]
 }
 
-function reducer(state, action) {
+function reducer(state, action) {                     //Reducer function to maintain all the events at once, state update logic can be out of function <App>.
     switch (action.type) {
         case 'CHANGE_INPUT':
             return {
@@ -86,10 +86,11 @@ function reducer(state, action) {
             return state;
     }
 }
+
 export default function App() {
 
     const [state, dispatch] = useReducer(reducer, initialState);
-    const nextId = useRef(3);
+    const nextId = useRef(3);                                //automatically makes id for visitors.
 
     const { visitors } = state;
     const {firstname, lastname, phonenumber, date } = state.inputs;
@@ -115,12 +116,12 @@ export default function App() {
         nextId.current += 1;
     }, [firstname, lastname, phonenumber]);
 
-    const onRemove = useCallback((id) => {
+    const onRemove =(id) => {
         dispatch({
             type: 'REMOVE',
             id
         });
-    }, []);
+    };
 
     const onSpread = (id) => {
         dispatch({
@@ -164,9 +165,6 @@ export default function App() {
             onSubmit={onSubmit} />
         <VisitorList
                 visitors={visitors}
-                firstname={firstname}
-                lastname={lastname}
-                phonenumber={phonenumber}
                 onChange={onChange}
                 onRemove={onRemove}
                 onSpread={onSpread}
