@@ -26,9 +26,9 @@ function Visitor({ visitor, onRemove, onSpread, onUpdate, onUpdateSubmit }) {
             {visitor.isUpdate ? <div className="update"><input type="text" name="firstname" value={firstname} onChange={onChange} placeholder="Firstname"></input>
                 <input type="text" name="lastname" value={lastname} onChange={onChange} placeholder="Lastname"></input></div>
                 :<span id="name" onClick={() => onSpread(visitor.id)} style={{ cursor: 'pointer' }}>{visitor.firstname} {visitor.lastname}</span>
-            }
+            }   //if isUpdate property is TRUE, update form is loaded. Otherwise, visitor'name is loaded.
             {
-            visitor.isSpread ? <div id={visitor.id}>
+            visitor.isSpread ? <div id={visitor.id}>      //if isSpread property is TRUE, detail info is loaded. Otherwise, just name shows up.
                 <p>No.{visitor.id}</p>
                     {visitor.isUpdate ? <div className="update"><span>Mobile:</span>
                         <input type="text" name="phonenumber" value={phonenumber} onChange={onChange} placeholder="Phone number"></input></div>
