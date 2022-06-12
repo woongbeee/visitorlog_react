@@ -12,6 +12,9 @@ const VisitorForm=({ fisrtname, lastname, phonenumber, onChange, onSubmit }) => 
             <button onClick={onSubmit}>Submit</button>
         </div>
     );
-}
+}                            //onChange saves user's input value to initialState.inputs in App.js.
+                             //onSubmit adds initialState.inputs to initialState.visitors.
+                            //initialState.visitors in App.js is Array object, used to save visitor's info.
+                              //initialState.visitors is rendered through VisitorList.js.
 
 export default VisitorForm;
